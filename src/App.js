@@ -1,7 +1,9 @@
+import { Typography } from '@mui/material';
+
 function App() {
   return (
     <div>
-      Hello
+      <Typography>Riley Bergamasco</Typography>
     </div>
   );
 }
