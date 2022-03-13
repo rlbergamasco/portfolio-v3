@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box } from '@mui/material';
+import PropTypes from 'prop-types';
 
 const TriangleBackground = ({ height, width, flip }) => {
     return (
@@ -12,3 +13,13 @@ const TriangleBackground = ({ height, width, flip }) => {
 };
 
 export { TriangleBackground };
+
+TriangleBackground.propTypes = {
+    height: PropTypes.string.isRequired,
+    width: PropTypes.string.isRequired,
+    flip: PropTypes.bool,
+};
+
+TriangleBackground.defaultProps = {
+    flip: false,
+};

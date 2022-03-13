@@ -1,15 +1,18 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
-import { TriangleBackground } from 'components';
+import { TriangleBackground, ArrowButton } from 'components';
+
 const HomePage = () => {
     return (
         <React.Fragment>
+            <ArrowButton direction='down' />
             <Box sx={{ height: '80vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <Box sx={{ width: '100%', maxWidth: '640px', display: 'flex', justifyContent: 'center', alignItems: 'center', pl: 6 }}>
                     <img style={{ width: '90%' }} src="/name_vector.svg" />
                 </Box>
             </Box>
             <About />
+            <ArrowButton direction='up' />
         </React.Fragment>
     );
 };
