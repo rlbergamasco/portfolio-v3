@@ -74,7 +74,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Box sx={{ height: "100vh", width: "100vw", backgroundColor: "#1C1C1C" }}>
+      <Box sx={{ minHieght: "100vh", width: "100vw", backgroundColor: "#1C1C1C" }}>
         <Routes>
           {ROUTES.map((route) => (
             <Route
