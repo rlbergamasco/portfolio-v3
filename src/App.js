@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Box, createTheme, ThemeProvider } from '@mui/material';
 import { HomePage, GraphicsPage } from 'pages';
@@ -15,7 +15,6 @@ const ROUTES = [
     element: <GraphicsPage />,
   },
 ];
-
 
 function App() {
   const theme = createTheme({

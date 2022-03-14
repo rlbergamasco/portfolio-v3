@@ -1,10 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box, Typography } from '@mui/material';
 import { TriangleBackground, ArrowButton } from 'components';
 
 const HomePage = () => {
+    const [scrollPosition, setScrollPosition] = useState(0);
+    const handleScroll = () => {
+        const position = window.pageYOffset;
+        setScrollPosition(position);
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll, { passive: true });
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return (
         <React.Fragment>
+            {scrollPosition > window.innerHeight * .75 ? <ArrowButton direction='up' /> : null}
             <ArrowButton direction='down' />
             <Box sx={{ height: '80vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <Box sx={{ width: '100%', maxWidth: '640px', display: 'flex', justifyContent: 'center', alignItems: 'center', pl: 6 }}>
@@ -12,7 +27,6 @@ const HomePage = () => {
                 </Box>
             </Box>
             <About />
-            <ArrowButton direction='up' />
         </React.Fragment>
     );
 };
