@@ -1,6 +1,5 @@
 import React from 'react';
 import { Grid, Box, Typography, Link } from '@mui/material';
-import { AddBox } from '@mui/icons-material';
 
 const DisplayCard = ({ title, date, description, image, url, tools, reverse }) => {
     return (
@@ -20,8 +19,8 @@ const DisplayCard = ({ title, date, description, image, url, tools, reverse }) =
             </Grid>
             <Grid item xs={12} md={5} sx={{ p: 2 }}>
                 <Box>
-                    <Typography variant='h2' color='textPrimary' sx={{ pb: 1 }}>{title}</Typography>
-                    <Typography variant='h3' color='textPrimary' sx={{ pb: 1 }}>{date}</Typography>
+                    <Link href={url} target="_blank" underline='none' variant='h2' color='textPrimary'>{title}</Link>
+                    <Typography variant='h3' color='textPrimary' sx={{ py: 1 }}>{date}</Typography>
                     <Typography color='textPrimary' sx={{ pb: 2 }}>{description}</Typography>
                     <Typography variant='h3' color='textPrimary'>Created using:</Typography>
                     <Grid container>
