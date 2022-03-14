@@ -22,7 +22,7 @@ const scrollNext = () => {
 const ArrowButton = ({ direction }) => {
     return (
         <React.Fragment>
-            {direction == 'back' ?
+            {direction === 'back' ?
                 <Link href="/"
                     sx={{
                         position: 'absolute',
@@ -31,7 +31,7 @@ const ArrowButton = ({ direction }) => {
                     }}>
                     <ArrowCircle direction={direction} />
                 </Link>
-                : direction == 'down' ?
+                : direction === 'down' ?
                     <IconButton
                         sx={{
                             position: 'absolute',
@@ -65,7 +65,7 @@ const ArrowCircle = ({ direction }) => {
         <Avatar
             sx={{
                 backgroundColor: '#1C1C1C',
-                border: `1px solid #F5F5F5`,
+                border: `2px solid #F5F5F5`,
                 color: '#F5F5F5',
                 ":hover": {
                     backgroundColor: '#F5F5F5',
@@ -73,8 +73,8 @@ const ArrowCircle = ({ direction }) => {
                     color: '#1C1C1C',
                 },
             }}>
-            {direction == 'back' ? <ArrowBack />
-                : direction == 'down' ? <ArrowDownward />
+            {direction === 'back' ? <ArrowBack />
+                : direction === 'down' ? <ArrowDownward />
                     : <ArrowUpward />
             }
         </Avatar>

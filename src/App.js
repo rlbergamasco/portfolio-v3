@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Box, createTheme, ThemeProvider } from '@mui/material';
 import { HomePage, GraphicsPage } from 'pages';
@@ -52,7 +52,7 @@ function App() {
           'sans-serif'
         ].join(','),
         fontWeight: 700,
-        fontSize: '2.4rem',
+        fontSize: '2.2rem',
       },
       h3: {
         fontFamily: [
