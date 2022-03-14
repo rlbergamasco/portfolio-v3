@@ -23,7 +23,12 @@ const ArrowButton = ({ direction }) => {
     return (
         <React.Fragment>
             {direction == 'back' ?
-                <Link href="/">
+                <Link href="/"
+                    sx={{
+                        position: 'absolute',
+                        top: '2rem',
+                        left: '2rem'
+                    }}>
                     <ArrowCircle direction={direction} />
                 </Link>
                 : direction == 'down' ?

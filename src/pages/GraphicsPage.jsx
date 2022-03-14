@@ -19,7 +19,7 @@ const GraphicsPage = () => {
 
     return (
         <Box sx={{ minHeight: '100vh' }}>
-            <Typography>Graphics</Typography>
+            <Typography variant='h1' color='textPrimary' textAlign='center' sx={{ p: 2 }}>Graphic Design</Typography>
             <ArrowButton direction="back" />
             {scrollPosition > window.innerHeight * .75 ? <ArrowButton direction='up' /> : null}
         </Box>
