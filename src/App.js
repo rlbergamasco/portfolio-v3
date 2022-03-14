@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Box, createTheme, ThemeProvider } from '@mui/material';
 import { HomePage, GraphicsPage } from 'pages';
+import { Footer } from 'components';
 
 const ROUTES = [
   {
@@ -83,6 +84,7 @@ function App() {
             />
           ))}
         </Routes>
+        <Footer />
       </Box>
     </ThemeProvider>
   );

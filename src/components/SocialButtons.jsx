@@ -8,7 +8,7 @@ const SocialButtons = () => {
         {
             icon: faLinkedinIn,
             url: "https://www.linkedin.com/in/rileybergamasco/",
-            size: "md"
+            size: "1x"
         },
         {
             icon: faGithub,
@@ -20,7 +20,7 @@ const SocialButtons = () => {
     return (
         <React.Fragment>
             {socials.map(({ icon, url, size }, i) => (
-                <Link href={url} key={i}>
+                <Link target="_blank" href={url} key={i}>
                     <Avatar
                         sx={{
                             backgroundColor: '#F5F5F5',

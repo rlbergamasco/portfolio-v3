@@ -21,7 +21,7 @@ const HomePage = () => {
 
     return (
         <React.Fragment>
-            {scrollPosition > window.innerHeight * .75 ? <ArrowButton direction='up' /> : null}
+            {scrollPosition > window.innerHeight * .5 ? <ArrowButton direction='up' /> : null}
             <ArrowButton direction='down' />
             <Box sx={{ height: '80vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <Box sx={{ width: '100%', maxWidth: '640px', display: 'flex', justifyContent: 'center', alignItems: 'center', pl: 6 }}>
