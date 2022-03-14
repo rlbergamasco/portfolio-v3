@@ -23,30 +23,34 @@ const HomePage = () => {
             date: "October 2021",
             description: "I wrote this short article and created this data visualization for MEJO 487: Intermediate Interactive Media. The project was designed to match the New York Times style.",
             image: "/energy.png",
-            url: "https://rileybergamasco.com/mejo487/energy-data/"
+            url: "https://rileybergamasco.com/mejo487/energy-data/",
+            tools: ["jquery", "bulma"]
         },
         {
             title: "XR Educational Website",
             date: "October 2021",
             description: "This educational website teaches about the three mediums of extended reality -- augmented reality, virtual reality, and mixed reality. I created this project for MEJO 487: Intermediate Interactive Media.",
             image: "/xr.png",
-            url: "https://rileybergamasco.com/mejo487/xr-slides/"
+            url: "https://rileybergamasco.com/mejo487/xr-slides/",
+            tools: ["react", "mui"]
         },
         {
             title: "React Playground",
             date: "September 2021",
             description: "A game in which you click different buttons to change and reveal components in order to color in all the dots. I created this game as a personal project to explore the capabilities of React and Material UI and demonstate some of the skills I learned during my intership at illumis.",
             image: "/playground.png",
-            url: "http://rileybergamasco.com/web-dev/react-playground/"
+            url: "http://rileybergamasco.com/web-dev/react-playground/",
+            tools: ["react", "mui"]
         },
         {
             title: "Graphic Design Projects",
             date: "Febuary 2020 - December 2022",
             description: "Graphic design projects including logo design, magazine layout, poster design, infographics, illustrations, and motion graphics.",
             image: "/name.svg",
-            url: "/graphics"
+            url: "/graphics",
+            tools: ["illustrator", "photoshop", "indesign", "aftereffects"]
         },
-    ]
+    ];
 
     return (
         <React.Fragment>
@@ -59,9 +63,9 @@ const HomePage = () => {
             </Box>
             <About />
             <Box sx={{ maxWidth: '1200px', m: 'auto', p: 3 }}>
-                <Typography variant='h1' color='textPrimary' textAlign="right">Featured Work</Typography>
-                {projects.map(({ title, date, description, image, url }, i) => (
-                    <DisplayCard key={i} title={title} date={date} description={description} image={image} url={url} reverse={i % 2 === 0} />
+                <Typography sx={{ p: 2 }} variant='h1' color='textPrimary' textAlign="right">Featured Work</Typography>
+                {projects.map(({ title, date, description, image, url, tools }, i) => (
+                    <DisplayCard key={i} title={title} date={date} description={description} image={image} url={url} tools={tools} reverse={i % 2 === 0} />
                 ))}
             </Box>
         </React.Fragment>
