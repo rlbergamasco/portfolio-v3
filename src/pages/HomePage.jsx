@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Box, Typography } from '@mui/material';
 import { TriangleBackground, ArrowButton, DisplayCard } from 'components';
 
+console.log("FIX ISSUES WITH REACT PLAYGROUND RESET");
+
 const HomePage = () => {
     const [scrollPosition, setScrollPosition] = useState(0);
     const handleScroll = () => {
@@ -39,7 +41,7 @@ const HomePage = () => {
             date: "September 2021",
             description: "A game in which you click different buttons to change and reveal components in order to color in all the dots. I created this game as a personal project to explore the capabilities of React and Material UI and demonstate some of the skills I learned during my intership at illumis.",
             image: "/playground.png",
-            url: "http://rileybergamasco.com/web-dev/react-playground/",
+            url: "https://rileybergamasco.com/web-dev/react-playground/",
             tools: ["react", "mui"]
         },
         {
@@ -62,8 +64,8 @@ const HomePage = () => {
                 </Box>
             </Box>
             <About />
-            <Box sx={{ maxWidth: '1200px', m: 'auto', p: 3 }}>
-                <Typography sx={{ p: 2 }} variant='h1' color='textPrimary' textAlign="right">Featured Work</Typography>
+            <Box sx={{ maxWidth: '1200px', mx: 'auto', mt: -7, p: 3, pt: 0 }}>
+                <Typography sx={{ p: 2, pt: 0 }} variant='h1' color='textPrimary' textAlign="right">Featured Work</Typography>
                 {projects.map(({ title, date, description, image, url, tools }, i) => (
                     <DisplayCard key={i} title={title} date={date} description={description} image={image} url={url} tools={tools} reverse={i % 2 === 0} />
                 ))}
