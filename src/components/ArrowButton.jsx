@@ -65,11 +65,10 @@ const ArrowCircle = ({ direction }) => {
         <Avatar
             sx={{
                 backgroundColor: '#1C1C1C',
-                border: `2px solid #F5F5F5`,
+                border: '2px solid #F5F5F5',
                 color: '#F5F5F5',
                 ":hover": {
                     backgroundColor: '#F5F5F5',
-                    border: `0`,
                     color: '#1C1C1C',
                 },
             }}>
