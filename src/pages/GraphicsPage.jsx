@@ -28,7 +28,7 @@ const GraphicsPage = () => {
         {
             title: "Editorial Illustration",
             date: "February 2021",
-            description: "Editorial illustration for a fictional story about a Top Secret project the United States government recently launched that integrates all of its military intelligence-gathering efforts into a state-of-the-art computer system called Hexion. This project was created for MEJO 482: Media Design.",
+            description: "Editorial illustration for a fictional story about a Top Secret project the United States government recently launched that integrates all of its military intelligence-gathering efforts into a state-of-the-art computer system. This project was created for MEJO 482: Media Design.",
             image: "/illustration-cover.jpeg",
             tools: ["illustrator"]
         },
@@ -42,7 +42,7 @@ const GraphicsPage = () => {
         {
             title: "No Time To Die Magazine Layout",
             date: "April 2020",
-            description: "Six-page spread magazine design emulating the styles of Vanity Fair and Esquire. This project was created for MEJO 182: Foundations of Graphic Design.",
+            description: "Six-page magazine spread design emulating the styles of Vanity Fair and Esquire. This project was created for MEJO 182: Foundations of Graphic Design.",
             image: "/magazine-cover.jpeg",
             tools: ["indesign"]
         },

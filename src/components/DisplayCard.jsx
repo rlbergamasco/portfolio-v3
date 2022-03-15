@@ -1,7 +1,8 @@
 import React from 'react';
 import { Grid, Box, Typography, Link } from '@mui/material';
+import PropTypes from 'prop-types';
 
-const DisplayCard = ({ title, date, description, image, url, tools, reverse }) => {
+const DisplayCard = ({ title, date, description, image, fullImages, url, tools, reverse }) => {
     return (
         <Grid container sx={{ py: 5 }} direction={reverse ? 'row-reverse' : 'row'}>
             <Grid item xs={12} md={7} sx={{ p: 2 }}>
@@ -25,7 +26,7 @@ const DisplayCard = ({ title, date, description, image, url, tools, reverse }) =
                     <Typography variant='h3' color='textPrimary'>Created using:</Typography>
                     <Grid container>
                         {tools.map((tool, i) => (
-                            <Grid item key={i} sx={12} s={6}>
+                            <Grid item key={i}>
                                 <ToolCard tool={tool} />
                             </Grid>
                         ))}
@@ -61,3 +62,18 @@ const ToolCard = ({ tool }) => {
 };
 
 export { DisplayCard };
+
+DisplayCard.propTypes = {
+    title: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    tools: PropTypes.array.isRequired,
+    url: PropTypes.string,
+    fullImages: PropTypes.array,
+    reverse: PropTypes.bool,
+};
+
+DisplayCard.defaultProps = {
+    reverse: false,
+};
