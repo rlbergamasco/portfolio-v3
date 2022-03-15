@@ -12,8 +12,8 @@ const DisplayCard = ({ title, date, description, image, url, tools, reverse }) =
                             transform: 'scale(1.1)',
                         },
                     }}>
-                        <Link href={url} target={url === "/graphics" ? "_self" : "_blank"}>
-                            <img width='100%' height='100%' src={image} />
+                        <Link href={url} underline='none' target={url === "/graphics" ? "_self" : "_blank"}>
+                            <img width='100%' height='100%' alt={title} src={image} />
                         </Link>
                     </Box></Box>
             </Grid>
@@ -46,13 +46,14 @@ const ToolCard = ({ tool }) => {
         illustrator: "Illustrator",
         photoshop: "Photoshop",
         indesign: "InDesign",
-        aftereffects: "After Effects"
+        aftereffects: "After Effects",
+        premierepro: "Premiere Pro"
     };
 
     return (
         <Box sx={{ display: 'flex', alignItems: 'center' }} >
             <Box sx={{ pr: 2, py: 1 }}>
-                <img style={{ objectFit: 'contain' }} width='58px' height='58px' src={`/logos/${tool}.png`} />
+                <img style={{ objectFit: 'contain' }} alt={toolNames[tool]} width='58px' height='58px' src={`/logos/${tool}.png`} />
             </Box>
             <Typography sx={{ pr: 3 }} color='textPrimary'>{toolNames[tool]}</Typography>
         </Box>

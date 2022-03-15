@@ -110,17 +110,17 @@ const FeaturedWork = () => {
             tools: ["react", "mui"]
         },
         {
-            title: "Graphic Design Projects",
-            date: "Febuary 2020 - December 2022",
-            description: "Graphic design projects including logo design, magazine layout, poster design, infographics, illustrations, and motion graphics.",
+            title: "Select Graphic Design Projects",
+            date: "Febuary 2020 - December 2021",
+            description: "Logo design, magazine layout, poster design, illustration, and motion graphic projects.",
             image: "/name.svg",
             url: "/graphics",
-            tools: ["illustrator", "photoshop", "indesign", "aftereffects"]
+            tools: ["illustrator", "photoshop", "indesign", "aftereffects", "premierepro"]
         },
     ];
 
     return (
-        <Box sx={{ maxWidth: '1200px', mx: 'auto', mt: -7, p: 3, pt: 0 }}>
+        <Box sx={{ maxWidth: '1140px', mx: 'auto', mt: -7, p: 3, pt: 0 }}>
             <Typography sx={{ p: 2, pt: 0 }} variant='h1' color='textPrimary' textAlign="right">Featured Work</Typography>
             {projects.map(({ title, date, description, image, url, tools }, i) => (
                 <DisplayCard key={i} title={title} date={date} description={description} image={image} url={url} tools={tools} reverse={i % 2 === 0} />
