@@ -22,8 +22,8 @@ const GraphicsPage = () => {
             title: "Morphing Motion Graphic",
             date: "December 2021",
             description: "I created this motion graphic to explore morphing simple shapes in Adobe After Effects. This project was created for MEJO 589: Motion Graphics.",
-            image: "/energy.png",
-            fullImgs: ["/logo-full.jpeg"],
+            image: "/morphing-cover.png",
+            fullImgs: ["/morphing.mp4"],
             tools: ["aftereffects", "premierepro"]
         },
         {
@@ -31,7 +31,7 @@ const GraphicsPage = () => {
             date: "February 2021",
             description: "Editorial illustration for a fictional story about a Top Secret project the United States government recently launched that integrates all of its military intelligence-gathering efforts into a state-of-the-art computer system. This project was created for MEJO 482: Media Design.",
             image: "/illustration-cover.jpeg",
-            fullImgs: ["/logo-full.jpeg"],
+            fullImgs: ["/illustration-full.jpg"],
             tools: ["illustrator"]
         },
         {

@@ -18,10 +18,10 @@ const DisplayCard = ({ title, date, description, image, fullImgs, url, tools, re
 
     return (
         <React.Fragment>
-            {fullImgs !== undefined ? <ProjectDialog open={open} fullImgs={fullImgs} handleClose={handleClose} /> : null}
+            {fullImgs !== undefined ? <ProjectDialog open={open} title={title} fullImgs={fullImgs} handleClose={handleClose} /> : null}
             <Grid container sx={{ py: 5 }} direction={reverse ? 'row-reverse' : 'row'}>
                 <Grid item xs={12} md={7} sx={{ p: 2 }}>
-                    <Box onClick={handleClick} sx={{ overflow: 'hidden' }}>
+                    <Box onClick={handleClick} sx={{ overflow: 'hidden', cursor: 'pointer' }}>
                         <Box sx={{
                             transition: 'all .3s ease',
                             ":hover": {
@@ -36,7 +36,7 @@ const DisplayCard = ({ title, date, description, image, fullImgs, url, tools, re
                 </Grid>
                 <Grid item xs={12} md={5} sx={{ p: 2 }}>
                     <Box>
-                        <Link href={url} onClick={handleClick} target="_blank" underline='none' variant='h2' color='textPrimary'>{title}</Link>
+                        <Link href={url} onClick={handleClick} target="_blank" underline='none' variant='h2' color='textPrimary' sx={{ cursor: 'pointer' }}>{title}</Link>
                         <Typography variant='h3' color='textPrimary' sx={{ py: 1 }}>{date}</Typography>
                         <Typography color='textPrimary' sx={{ pb: 2 }}>{description}</Typography>
                         <Typography variant='h3' color='textPrimary'>Created using:</Typography>
