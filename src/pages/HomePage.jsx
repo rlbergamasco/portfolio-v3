@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Box, Typography, Fab } from '@mui/material';
 import { TriangleBackground, ArrowButton, DisplayCard, SocialButtons } from 'components';
 
 console.log("FIX ISSUES WITH REACT PLAYGROUND RESET");
 
 const HomePage = () => {
+    // scroll position for return to top button
     const [scrollPosition, setScrollPosition] = useState(0);
     const handleScroll = () => {
         const position = window.pageYOffset;
@@ -35,12 +36,19 @@ const HomePage = () => {
 };
 
 const About = () => {
+    const [aboutHeight, setAboutHeight] = useState(0);
+    const ref = useRef(null);
+
+    useEffect(() => {
+        setAboutHeight(ref.current.clientHeight);
+    });
+
     return (
         <React.Fragment>
             <TriangleBackground height="37vw" width="100vw" />
-            <Box sx={{ height: 'calc(1000px - 74vw)', width: '100vw', backgroundColor: '#F5F5F5' }} />
+            <Box sx={{ height: `calc(${aboutHeight}px + 300px - 74vw)`, width: '100vw', backgroundColor: '#F5F5F5' }} />
             <TriangleBackground height="37vw" width="100vw" flip />
-            <Box sx={{ p: 5, m: 5, maxWidth: '700px', zIndex: 10, position: 'absolute', top: '95vh' }}>
+            <Box ref={ref} sx={{ p: 5, maxWidth: '700px', zIndex: 10, position: 'absolute', top: '100vh' }}>
                 <Typography color="textSecondary" variant="h1">About Me</Typography>
                 <Typography color="textSecondary" sx={{ pt: 3 }}>
                     {"My name is Riley Bergamasco. I'm a junior in the Hussman School of Journalism and Media at the University of North Carolina at Chapel Hill double majoring in Media and Journalism (Interactive Media Concentration) & Computer Science with a minor in Cognitive Science."}
@@ -54,7 +62,7 @@ const About = () => {
                 <Typography color="textSecondary" sx={{ pt: 3 }}>
                     I designed and developed this website and all of its content. This website was built using React.
                 </Typography>
-                <Box sx={{ my: 2, display: 'flex' }}>
+                <Box sx={{ my: 2, display: 'flex', flexWrap: 'wrap' }}>
                     <Fab
                         variant='extended'
                         size='medium'
@@ -120,7 +128,7 @@ const FeaturedWork = () => {
     ];
 
     return (
-        <Box sx={{ maxWidth: '1140px', mx: 'auto', mt: -7, p: 3, pt: 0 }}>
+        <Box sx={window.innerWidth > 680 ? { maxWidth: '1140px', mx: 'auto', mt: -7, p: 3, pt: 0 } : { maxWidth: '1140px', mx: 'auto', mt: 4, p: 3, pt: 0 }}>
             <Typography sx={{ p: 2, pt: 0 }} variant='h1' color='textPrimary' textAlign="right">Featured Work</Typography>
             {projects.map(({ title, date, description, image, url, tools }, i) => (
                 <DisplayCard key={i} title={title} date={date} description={description} image={image} url={url} tools={tools} reverse={i % 2 === 0} />

@@ -43,6 +43,12 @@ function App() {
         ].join(','),
         fontWeight: 700,
         fontSize: '4.2rem',
+        '@media (max-width: 800px)': {
+          fontSize: '3.6rem',
+        },
+        '@media (max-width: 500px)': {
+          fontSize: '2.4rem',
+        },
       },
       h2: {
         fontFamily: [
@@ -54,6 +60,12 @@ function App() {
         ].join(','),
         fontWeight: 700,
         fontSize: '2.2rem',
+        '@media (max-width: 800px)': {
+          fontSize: '1.8rem',
+        },
+        '@media (max-width: 500px)': {
+          fontSize: '1.7rem',
+        },
       },
       h3: {
         fontFamily: [
