@@ -1,39 +1,56 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Grid, Box, Typography, Link } from '@mui/material';
+import { ProjectDialog } from 'components';
 import PropTypes from 'prop-types';
 
-const DisplayCard = ({ title, date, description, image, fullImages, url, tools, reverse }) => {
+const DisplayCard = ({ title, date, description, image, fullImgs, url, tools, reverse }) => {
+    const [open, setOpen] = useState(false);
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
+    const handleClick = () => {
+        if (fullImgs !== undefined && url === undefined) {
+            setOpen(true);
+        }
+    };
+
     return (
-        <Grid container sx={{ py: 5 }} direction={reverse ? 'row-reverse' : 'row'}>
-            <Grid item xs={12} md={7} sx={{ p: 2 }}>
-                <Box sx={{ overflow: 'hidden' }}>
-                    <Box sx={{
-                        transition: 'all .3s ease',
-                        ":hover": {
-                            transform: 'scale(1.1)',
-                        },
-                    }}>
-                        <Link href={url} underline='none' target={url === "/graphics" ? "_self" : "_blank"}>
-                            <img width='100%' height='100%' alt={title} src={image} />
-                        </Link>
-                    </Box></Box>
-            </Grid>
-            <Grid item xs={12} md={5} sx={{ p: 2 }}>
-                <Box>
-                    <Link href={url} target="_blank" underline='none' variant='h2' color='textPrimary'>{title}</Link>
-                    <Typography variant='h3' color='textPrimary' sx={{ py: 1 }}>{date}</Typography>
-                    <Typography color='textPrimary' sx={{ pb: 2 }}>{description}</Typography>
-                    <Typography variant='h3' color='textPrimary'>Created using:</Typography>
-                    <Grid container>
-                        {tools.map((tool, i) => (
-                            <Grid item key={i}>
-                                <ToolCard tool={tool} />
-                            </Grid>
-                        ))}
-                    </Grid>
-                </Box>
-            </Grid>
-        </Grid >
+        <React.Fragment>
+            {fullImgs !== undefined ? <ProjectDialog open={open} fullImgs={fullImgs} handleClose={handleClose} /> : null}
+            <Grid container sx={{ py: 5 }} direction={reverse ? 'row-reverse' : 'row'}>
+                <Grid item xs={12} md={7} sx={{ p: 2 }}>
+                    <Box onClick={handleClick} sx={{ overflow: 'hidden' }}>
+                        <Box sx={{
+                            transition: 'all .3s ease',
+                            ":hover": {
+                                transform: 'scale(1.1)',
+                            },
+                        }}>
+                            <Link href={url} underline='none' target={url === "/graphics" ? "_self" : "_blank"}>
+                                <img width='100%' height='100%' alt={title} src={image} />
+                            </Link>
+                        </Box>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} md={5} sx={{ p: 2 }}>
+                    <Box>
+                        <Link href={url} onClick={handleClick} target="_blank" underline='none' variant='h2' color='textPrimary'>{title}</Link>
+                        <Typography variant='h3' color='textPrimary' sx={{ py: 1 }}>{date}</Typography>
+                        <Typography color='textPrimary' sx={{ pb: 2 }}>{description}</Typography>
+                        <Typography variant='h3' color='textPrimary'>Created using:</Typography>
+                        <Grid container>
+                            {tools.map((tool, i) => (
+                                <Grid item key={i}>
+                                    <ToolCard tool={tool} />
+                                </Grid>
+                            ))}
+                        </Grid>
+                    </Box>
+                </Grid>
+            </Grid >
+        </React.Fragment>
     );
 };
 
@@ -70,7 +87,7 @@ DisplayCard.propTypes = {
     image: PropTypes.string.isRequired,
     tools: PropTypes.array.isRequired,
     url: PropTypes.string,
-    fullImages: PropTypes.array,
+    fullImgs: PropTypes.array,
     reverse: PropTypes.bool,
 };
 
