@@ -15,8 +15,8 @@ const TriangleBackground = ({ height, width, flip }) => {
 export { TriangleBackground };
 
 TriangleBackground.propTypes = {
-    height: PropTypes.string.isRequired,
-    width: PropTypes.string.isRequired,
+    height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     flip: PropTypes.bool,
 };
 

@@ -52,6 +52,9 @@ const ArrowButton = ({ direction }) => {
                             bottom: 20,
                             left: 'auto',
                             position: 'fixed',
+                            ':hover': {
+                                background: 'none'
+                            }
                         }} onClick={scrollToTop} >
                         <ArrowCircle direction={direction} />
                     </IconButton>

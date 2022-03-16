@@ -43,12 +43,17 @@ const About = () => {
         setAboutHeight(ref.current.clientHeight);
     });
 
+    const triangleSpace = aboutHeight + 300 - (window.innerWidth * .74);
+    const triangleHeight = triangleSpace > 0 ? window.innerWidth * .37 : (aboutHeight + 400) / 2;
+    const aboutBackgroundHeight = triangleSpace < 0 ? triangleHeight * 2 : triangleSpace + (triangleHeight * 2);
+    const aboutTop = ((aboutBackgroundHeight - aboutHeight) / 2) + (window.innerHeight * .8);
+
     return (
         <React.Fragment>
-            <TriangleBackground height="37vw" width="100vw" />
-            <Box sx={{ height: `calc(${aboutHeight}px + 300px - 74vw)`, width: '100vw', backgroundColor: '#F5F5F5' }} />
-            <TriangleBackground height="37vw" width="100vw" flip />
-            <Box ref={ref} sx={{ p: 5, maxWidth: '700px', zIndex: 10, position: 'absolute', top: '100vh' }}>
+            <TriangleBackground height={triangleHeight} width="100vw" />
+            <Box sx={{ height: triangleSpace, width: '100vw', backgroundColor: '#F5F5F5' }} />
+            <TriangleBackground height={triangleHeight} width="100vw" flip />
+            <Box ref={ref} sx={{ p: 5, ml: triangleSpace < 0 ? `${window.innerWidth * .05}px` : 0, maxWidth: '700px', zIndex: 10, position: 'absolute', top: aboutTop }}>
                 <Typography color="textSecondary" variant="h1">About Me</Typography>
                 <Typography color="textSecondary" sx={{ pt: 3 }}>
                     {"My name is Riley Bergamasco. I'm a junior in the Hussman School of Journalism and Media at the University of North Carolina at Chapel Hill double majoring in Media and Journalism (Interactive Media Concentration) & Computer Science with a minor in Cognitive Science."}
