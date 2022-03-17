@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Box, Typography, Fab } from '@mui/material';
-import { TriangleBackground, ArrowButton, DisplayCard, SocialButtons } from 'components';
+import { TriangleBackground, ArrowButton, DisplayCard, SocialButtons, NameAnimation } from 'components';
 
 console.log("FIX ISSUES WITH REACT PLAYGROUND RESET");
 
@@ -20,15 +20,20 @@ const HomePage = () => {
         };
     }, []);
 
+    const [showDownButton, setShowDownButton] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShowDownButton(true);
+        }, 3300);
+        return () => clearTimeout(timer);
+    }, []);
+
     return (
         <React.Fragment>
             {scrollPosition > window.innerHeight * .5 ? <ArrowButton direction='up' /> : null}
-            <ArrowButton direction='down' />
-            <Box sx={{ height: '80vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Box sx={{ width: '100%', maxWidth: '640px', display: 'flex', justifyContent: 'center', alignItems: 'center', pl: 6 }}>
-                    <img style={{ width: '90%' }} src="/name.svg" />
-                </Box>
-            </Box>
+            {showDownButton ? <ArrowButton direction='down' /> : null}
+            <NameAnimation />
             <About />
             <FeaturedWork />
         </React.Fragment>
@@ -41,12 +46,12 @@ const About = () => {
 
     useEffect(() => {
         setAboutHeight(ref.current.clientHeight);
-    });
+    }, []);
 
     const triangleSpace = aboutHeight + 300 - (window.innerWidth * .74);
     const triangleHeight = triangleSpace > 0 ? window.innerWidth * .37 : (aboutHeight + 400) / 2;
     const aboutBackgroundHeight = triangleSpace < 0 ? triangleHeight * 2 : triangleSpace + (triangleHeight * 2);
-    const aboutTop = ((aboutBackgroundHeight - aboutHeight) / 2) + (window.innerHeight * .8);
+    const aboutTop = ((aboutBackgroundHeight - aboutHeight) / 2) + window.innerHeight;
 
     return (
         <React.Fragment>

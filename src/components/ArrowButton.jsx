@@ -13,7 +13,7 @@ const scrollToTop = () => {
 
 const scrollNext = () => {
     window.scrollTo({
-        top: window.innerHeight * .95,
+        top: window.innerHeight * 1.1,
         left: 0,
         behavior: 'smooth'
     });
@@ -35,7 +35,7 @@ const ArrowButton = ({ direction }) => {
                     <IconButton
                         sx={{
                             position: 'absolute',
-                            top: '60vh',
+                            top: '70vh',
                             left: 0,
                             right: 0,
                             margin: 'auto'
