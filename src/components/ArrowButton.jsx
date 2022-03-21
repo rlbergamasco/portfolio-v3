@@ -67,12 +67,14 @@ const ArrowCircle = ({ direction }) => {
     return (
         <Avatar
             sx={{
-                backgroundColor: '#1C1C1C',
+                backgroundColor: '#F5F5F5',
+                color: '#1C1C1C',
+
                 border: '2px solid #F5F5F5',
-                color: '#F5F5F5',
+
                 ":hover": {
-                    backgroundColor: '#F5F5F5',
-                    color: '#1C1C1C',
+                    backgroundColor: '#1C1C1C',
+                    color: '#F5F5F5',
                 },
             }}>
             {direction === 'back' ? <ArrowBack />

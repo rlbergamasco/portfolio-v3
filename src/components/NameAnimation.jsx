@@ -8,7 +8,7 @@ const NameAnimation = () => {
             targets: '.st0',
             strokeDashoffset: [anime.setDashoffset, 0],
             easing: 'cubicBezier(.5, .05, .1, .3)',
-            duration: 1600,
+            duration: 1800,
             delay: 500
         });
     };
@@ -19,7 +19,7 @@ const NameAnimation = () => {
             strokeDashoffset: [anime.setDashoffset, 0],
             easing: 'linear',
             duration: 100,
-            delay: 2300
+            delay: 2500
         });
     };
 
@@ -30,7 +30,7 @@ const NameAnimation = () => {
             easing: 'linear',
             duration: 1,
             delay: function (_, i) {
-                return 2500 + i * 80;
+                return 2700 + i * 80;
             }
         });
     };
