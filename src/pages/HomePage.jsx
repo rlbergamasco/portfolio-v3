@@ -131,7 +131,7 @@ const FeaturedWork = () => {
             title: "Select Graphic Design Projects",
             date: "Febuary 2020 - December 2021",
             description: "Logo design, magazine layout, poster design, illustration, and motion graphic projects.",
-            image: "/name.svg",
+            image: "/graphic-design.png",
             url: "/graphics",
             tools: ["illustrator", "photoshop", "indesign", "aftereffects", "premierepro"]
         },
@@ -141,7 +141,7 @@ const FeaturedWork = () => {
         <Box sx={window.innerWidth > 680 ? { maxWidth: '1140px', mx: 'auto', mt: -7, p: 3, pt: 0 } : { maxWidth: '1140px', mx: 'auto', mt: 4, p: 3, pt: 0 }}>
             <Typography sx={{ p: 2, pt: 0 }} variant='h1' color='textPrimary' textAlign="right">Featured Work</Typography>
             {projects.map(({ title, date, description, image, url, tools }, i) => (
-                <DisplayCard key={i} title={title} date={date} description={description} image={image} url={url} tools={tools} reverse={i % 2 === 0} />
+                <DisplayCard key={i} title={title} date={date} description={description} image={`/images${image}`} url={url} tools={tools} reverse={i % 2 === 0} />
             ))}
         </Box>
     );

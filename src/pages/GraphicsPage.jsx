@@ -68,7 +68,7 @@ const GraphicsPage = () => {
             {scrollPosition > window.innerHeight * .5 ? <ArrowButton direction='up' /> : null}
             <Box sx={{ maxWidth: '1140px', mx: 'auto', mt: -7, p: 3, pt: 0 }}>
                 {projects.map(({ title, date, description, image, fullImgs, tools }, i) => (
-                    <DisplayCard key={i} title={title} date={date} description={description} image={image} fullImgs={fullImgs} tools={tools} reverse={i % 2 === 1} />
+                    <DisplayCard key={i} title={title} date={date} description={description} image={`/images${image}`} fullImgs={fullImgs} tools={tools} reverse={i % 2 === 1} />
                 ))}
             </Box>
         </Box>
