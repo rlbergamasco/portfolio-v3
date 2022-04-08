@@ -12,10 +12,10 @@ const ProjectDialog = ({ fullImgs, handleClose, open, title }) => {
                     <Box sx={{ m: 2 }} key={i}>
                         {title === "Morphing Motion Graphic" ?
                             <video autoPlay loop controls style={{ objectFit: 'contain', maxHeight: '87vh', maxWidth: '100%', height: '100%', width: 'auto' }}>
-                                <source src={url} type="video/mp4" />
+                                <source src={`/images${url}`} type="video/mp4" />
                             </video>
                             :
-                            <img src={url} alt={title} style={{ objectFit: 'contain', maxHeight: '87vh', maxWidth: '100%', height: '100%', width: 'auto' }} />
+                            <img src={`/images${url}`} alt={title} style={{ objectFit: 'contain', maxHeight: '87vh', maxWidth: '100%', height: '100%', width: 'auto' }} />
 
                         }
                     </Box>

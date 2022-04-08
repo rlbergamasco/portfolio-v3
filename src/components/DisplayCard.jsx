@@ -36,7 +36,7 @@ const DisplayCard = ({ title, date, description, image, fullImgs, url, tools, re
                 </Grid>
                 <Grid item xs={12} md={5} sx={{ p: 2 }}>
                     <Box>
-                        <Link href={url} onClick={handleClick} target="_blank" underline='none' variant='h2' color='textPrimary' sx={{ cursor: 'pointer' }}>{title}</Link>
+                        <Link href={url} onClick={handleClick} target={url === "/graphics" ? "_self" : "_blank"} underline='none' variant='h2' color='textPrimary' sx={{ cursor: 'pointer' }}>{title}</Link>
                         <Typography variant='h3' color='textPrimary' sx={{ py: 1 }}>{date}</Typography>
                         <Typography color='textPrimary' sx={{ pb: 2 }}>{description}</Typography>
                         <Typography variant='h3' color='textPrimary'>Created using:</Typography>
