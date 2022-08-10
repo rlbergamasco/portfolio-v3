@@ -13,7 +13,7 @@ const scrollToTop = () => {
 
 const scrollNext = () => {
     window.scrollTo({
-        top: window.innerHeight * 1.1,
+        top: window.innerHeight * 1.15,
         left: 0,
         behavior: 'smooth'
     });

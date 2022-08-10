@@ -58,19 +58,19 @@ const About = () => {
             <TriangleBackground height={triangleHeight} width="100vw" />
             <Box sx={{ height: triangleSpace, width: '100vw', backgroundColor: '#F5F5F5' }} />
             <TriangleBackground height={triangleHeight} width="100vw" flip />
-            <Box ref={ref} sx={{ p: 5, ml: triangleSpace < 0 ? `${window.innerWidth * .05}px` : 0, maxWidth: '700px', zIndex: 10, position: 'absolute', top: aboutTop }}>
+            <Box ref={ref} sx={{ p: 5, ml: window.innerWidth < 800 ? 0 : `${window.innerWidth * .04}px`, maxWidth: '700px', zIndex: 10, position: 'absolute', top: aboutTop }}>
                 <Typography color="textSecondary" variant="h1">About Me</Typography>
                 <Typography color="textSecondary" sx={{ pt: 3 }}>
-                    {"My name is Riley Bergamasco. I'm a junior in the Hussman School of Journalism and Media at the University of North Carolina at Chapel Hill double majoring in Media and Journalism (Interactive Media Concentration) & Computer Science with a minor in Cognitive Science."}
+                    {"My name is Riley Bergamasco. I am a senior at the University of North Carolina at Chapel Hill double majoring in Computer Science and Journalism with a concentration in Interactive Media & Design. My goal is to bridge the gap between design and coding to create unique, usable experiences."}
                 </Typography>
                 <Typography color="textSecondary" sx={{ pt: 3 }}>
-                    I have experience with UI/UX design, web and mobile app development, AR development, and more. I also have experience designing logos, branding, magazine layouts, illustrations, infographics, websites, and motion graphics.
+                    My experiences include front-end and full-stack web development, front-end mobile development, UI/UX design, and graphic design including designing logos, branding, magazine layouts, illustrations, infographics, and motion graphics. I plan to pursue a career as a UX engineer, front-end developer, design technologist, or similar role.
                 </Typography>
                 <Typography color="textSecondary" sx={{ pt: 3 }}>
-                    Learn more about my experience, skills, and interests by downloading my resume, connecting with me on LinkedIn, or checking out my GitHub.
+                    Learn more about my experience, skills, and interests by downloading my resume, connecting with me on LinkedIn, or checking out my GitHub. I will be available for full-time opportunities starting in summer 2023.
                 </Typography>
                 <Typography color="textSecondary" sx={{ pt: 3 }}>
-                    I designed and developed this website and all of its content. This website was built using React.
+                    I designed and developed this website and all of its content. This website was created using React.
                 </Typography>
                 <Box sx={{ my: 2, display: 'flex', flexWrap: 'wrap' }}>
                     <Fab
