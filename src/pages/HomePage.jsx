@@ -64,7 +64,7 @@ const About = () => {
                     {"My name is Riley Bergamasco. I am a senior at the University of North Carolina at Chapel Hill double majoring in Computer Science and Journalism with a concentration in Interactive Media & Design. My goal is to bridge the gap between design and coding to create unique, usable experiences."}
                 </Typography>
                 <Typography color="textSecondary" sx={{ pt: 3 }}>
-                    My experiences include front-end and full-stack web development, front-end mobile development, UI/UX design, and graphic design including designing logos, branding, magazine layouts, illustrations, infographics, and motion graphics. I plan to pursue a career as a UX engineer, front-end developer, design technologist, or similar role.
+                    My experience includes front-end and full-stack web development, iOS mobile development, UI/UX design, and graphic design including designing logos, branding, magazine layouts, illustrations, infographics, and motion graphics. I plan to pursue a career as a UX engineer, front-end developer, design technologist, or similar role.
                 </Typography>
                 <Typography color="textSecondary" sx={{ pt: 3 }}>
                     Learn more about my experience, skills, and interests by downloading my resume, connecting with me on LinkedIn, or checking out my GitHub. I will be available for full-time opportunities starting in summer 2023.

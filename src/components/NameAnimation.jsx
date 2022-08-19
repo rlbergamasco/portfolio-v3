@@ -44,7 +44,8 @@ const NameAnimation = () => {
     return (
         <Box sx={{ height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <Box sx={{ width: '100%', maxWidth: '700px', display: 'flex', justifyContent: 'center', alignItems: 'center', pl: 6 }}>
-                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                {/* <object data="name.svg" type="image/svg+xml"></object> */}
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="692px" height="503.8px"
                     viewBox="0 0 692 503.8" >
                     <path className="st0" style={{ fill: 'none', stroke: 'white', strokeWidth: 6, strokeLinecap: 'round', strokeLinejoin: 'round', strokeMiterlimit: 10 }}
                         d="M37.9,178.2c0,0,83,4,146-75c0,0,5.2,74.9-42,195c-46,117-72,100-54-6s88.1-228.6,163-266c74-37,67,52-57,207
