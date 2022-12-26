@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Box, Typography, Fab } from '@mui/material';
-import { TriangleBackground, ArrowButton, DisplayCard, SocialButtons, NameAnimation } from 'components';
-
-console.log("FIX ISSUES WITH REACT PLAYGROUND RESET");
+import { Box, Typography, Fab, Grid } from '@mui/material';
+import { TriangleBackground, ArrowButton, DisplayCard, SocialButtons, NameAnimation, ProjectCard } from 'components';
+import { about, projects } from 'constants';
 
 const HomePage = () => {
     // scroll position for return to top button
@@ -60,19 +59,10 @@ const About = () => {
             <TriangleBackground height={triangleHeight} width="100vw" flip />
             <Box ref={ref} sx={{ p: 5, ml: window.innerWidth < 800 ? 0 : `${window.innerWidth * .04}px`, maxWidth: '700px', zIndex: 10, position: 'absolute', top: aboutTop }}>
                 <Typography color="textSecondary" variant="h1">About Me</Typography>
-                <Typography color="textSecondary" sx={{ pt: 3 }}>
-                    {"My name is Riley Bergamasco. I am a senior at the University of North Carolina at Chapel Hill double majoring in Computer Science and Journalism with a concentration in Interactive Media & Design. My goal is to bridge the gap between design and coding to create unique, usable experiences."}
-                </Typography>
-                <Typography color="textSecondary" sx={{ pt: 3 }}>
-                    My experience includes front-end and full-stack web development, iOS mobile development, UI/UX design, and graphic design including designing logos, branding, magazine layouts, illustrations, infographics, and motion graphics. I plan to pursue a career as a UX engineer, front-end developer, design technologist, or similar role.
-                </Typography>
-                <Typography color="textSecondary" sx={{ pt: 3 }}>
-                    Learn more about my experience, skills, and interests by downloading my resume, connecting with me on LinkedIn, or checking out my GitHub. I will be available for full-time opportunities starting in summer 2023.
-                </Typography>
-                <Typography color="textSecondary" sx={{ pt: 3 }}>
-                    I designed and developed this website and all of its content. This website was created using React.
-                </Typography>
-                <Box sx={{ my: 2, display: 'flex', flexWrap: 'wrap' }}>
+                {about.map(p => (
+                    <Typography color="textSecondary" sx={{ pt: 3 }}>{p}</Typography>
+                ))}
+                <Box sx={{ mt: 4, mb: 1, display: 'flex', flexWrap: 'wrap' }}>
                     <Fab
                         variant='extended'
                         size='medium'
@@ -102,47 +92,16 @@ const About = () => {
 };
 
 const FeaturedWork = () => {
-    const projects = [
-        {
-            title: "Energy Data Visualization",
-            date: "October 2021",
-            description: "I wrote this short article and created this data visualization for MEJO 487: Intermediate Interactive Media. The project was designed to match the New York Times style.",
-            image: "/energy.png",
-            url: "https://rileybergamasco.com/mejo487/energy-data/",
-            tools: ["jquery", "bulma"]
-        },
-        {
-            title: "XR Educational Website",
-            date: "October 2021",
-            description: "This educational website teaches about the three mediums of extended reality -- augmented reality, virtual reality, and mixed reality. I created this project for MEJO 487: Intermediate Interactive Media.",
-            image: "/xr.png",
-            url: "https://rileybergamasco.com/mejo487/xr-slides/",
-            tools: ["react", "mui"]
-        },
-        {
-            title: "React Playground",
-            date: "September 2021",
-            description: "A game in which you click different buttons to change and reveal components in order to color in all the dots. I created this game as a personal project to explore the capabilities of React and Material UI and demonstate some of the skills I learned during my intership at illumis.",
-            image: "/playground.png",
-            url: "https://rileybergamasco.com/web-dev/react-playground/",
-            tools: ["react", "mui"]
-        },
-        {
-            title: "Select Graphic Design Projects",
-            date: "Febuary 2020 - December 2021",
-            description: "Logo design, magazine layout, poster design, illustration, and motion graphic projects.",
-            image: "/graphic-design.png",
-            url: "/graphics",
-            tools: ["illustrator", "photoshop", "indesign", "aftereffects", "premierepro"]
-        },
-    ];
-
     return (
-        <Box sx={window.innerWidth > 680 ? { maxWidth: '1140px', mx: 'auto', mt: -7, p: 3, pt: 0 } : { maxWidth: '1140px', mx: 'auto', mt: 4, p: 3, pt: 0 }}>
-            <Typography sx={{ p: 2, pt: 0 }} variant='h1' color='textPrimary' textAlign="right">Featured Work</Typography>
-            {projects.map(({ title, date, description, image, url, tools }, i) => (
-                <DisplayCard key={i} title={title} date={date} description={description} image={`/images${image}`} url={url} tools={tools} reverse={i % 2 === 0} />
-            ))}
+        <Box sx={window.innerWidth > 680 ? { maxWidth: '1300px', mx: 'auto', mt: -7, p: 3, pt: 0 } : { maxWidth: '1300px', mx: 'auto', mt: 4, p: 3, pt: 0 }}>
+            <Typography sx={{ p: 2, pt: 0 }} variant='h1' color='textPrimary' textAlign="center">Featured Work</Typography>
+            <Grid container>
+                {projects.map(({ title, image, category }, i) => (
+                    <Grid item key={i} xs={6} sx={{ p: 2 }}>
+                        <ProjectCard title={title} category={category} image={`/images${image}`} />
+                    </Grid>
+                ))}
+            </Grid>
         </Box>
     );
 };

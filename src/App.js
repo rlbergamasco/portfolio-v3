@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Box, createTheme, ThemeProvider } from '@mui/material';
-import { HomePage, GraphicsPage } from 'pages';
+import { HomePage, GraphicsPage, ProjectPage } from 'pages';
 import { Footer } from 'components';
 
 const ROUTES = [
@@ -14,6 +14,11 @@ const ROUTES = [
     label: 'Graphics',
     path: '/graphics',
     element: <GraphicsPage />,
+  },
+  {
+    label: 'Project',
+    path: '/project',
+    element: <ProjectPage />,
   },
 ];
 
@@ -77,6 +82,17 @@ function App() {
         ].join(','),
         fontWeight: 500,
         fontSize: '1.5rem',
+      },
+      h4: {
+        fontFamily: [
+          'Montserrat',
+          'Roboto',
+          'Helvetica',
+          'Arial',
+          'sans-serif'
+        ].join(','),
+        fontWeight: 700,
+        fontSize: '1.2rem',
       },
       body1: {
         fontSize: '1.2rem',
