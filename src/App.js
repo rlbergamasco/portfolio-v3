@@ -2,23 +2,32 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Box, createTheme, ThemeProvider } from '@mui/material';
 import { HomePage, GraphicsPage, ProjectPage } from 'pages';
-import { Footer } from 'components';
+import { projects } from 'constants';
 
 const ROUTES = [
   {
-    label: 'Home',
     path: '/',
     element: <HomePage />,
   },
   {
-    label: 'Graphics',
     path: '/graphics',
     element: <GraphicsPage />,
   },
   {
-    label: 'Project',
-    path: '/project',
-    element: <ProjectPage />,
+    path: '/goodreads',
+    element: <ProjectPage project={projects[0]} />,
+  },
+  {
+    path: '/energy',
+    element: <ProjectPage project={projects[1]} />,
+  },
+  {
+    path: '/xrslider',
+    element: <ProjectPage project={projects[2]} />,
+  },
+  {
+    path: '/infographics',
+    element: <ProjectPage project={projects[3]} />,
   },
 ];
 
@@ -112,7 +121,6 @@ function App() {
             />
           ))}
         </Routes>
-        <Footer />
       </Box>
     </ThemeProvider>
   );

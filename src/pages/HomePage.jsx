@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Box, Typography, Fab, Grid } from '@mui/material';
-import { TriangleBackground, ArrowButton, DisplayCard, SocialButtons, NameAnimation, ProjectCard } from 'components';
+import { TriangleBackground, ArrowButton, Footer, SocialButtons, NameAnimation, ProjectCard, OvalButton } from 'components';
 import { about, projects } from 'constants';
 
 const HomePage = () => {
@@ -35,6 +35,7 @@ const HomePage = () => {
             <NameAnimation />
             <About />
             <FeaturedWork />
+            <Footer isDiagonal />
         </React.Fragment>
     );
 };
@@ -63,27 +64,7 @@ const About = () => {
                     <Typography color="textSecondary" sx={{ pt: 3 }}>{p}</Typography>
                 ))}
                 <Box sx={{ mt: 4, mb: 1, display: 'flex', flexWrap: 'wrap' }}>
-                    <Fab
-                        variant='extended'
-                        size='medium'
-                        sx={{
-                            backgroundColor: '#f5f5f5',
-                            textTransform: 'capitalize',
-                            fontSize: '1.1rem',
-                            fontWeight: 500,
-                            boxShadow: 0,
-                            color: '#1c1c1c',
-                            border: '2px solid #1c1c1c',
-                            ":hover": {
-                                backgroundColor: '#1c1c1c',
-                                color: '#f5f5f5',
-                            },
-                        }}
-                        href="/resume.pdf"
-                        download="rileybergamasco_resume"
-                    >
-                        Download Resume
-                    </Fab>
+                    <OvalButton href='/resume.pdf' isDownload>Download Resume</OvalButton>
                     <SocialButtons />
                 </Box>
             </Box>
@@ -96,9 +77,9 @@ const FeaturedWork = () => {
         <Box sx={window.innerWidth > 680 ? { maxWidth: '1300px', mx: 'auto', mt: -7, p: 3, pt: 0 } : { maxWidth: '1300px', mx: 'auto', mt: 4, p: 3, pt: 0 }}>
             <Typography sx={{ p: 2, pt: 0 }} variant='h1' color='textPrimary' textAlign="center">Featured Work</Typography>
             <Grid container>
-                {projects.map(({ title, image, category }, i) => (
+                {projects.map(({ title, image, category, path }, i) => (
                     <Grid item key={i} xs={6} sx={{ p: 2 }}>
-                        <ProjectCard title={title} category={category} image={`/images${image}`} />
+                        <ProjectCard title={title} category={category} image={image} path={path} />
                     </Grid>
                 ))}
             </Grid>
