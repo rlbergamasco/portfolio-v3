@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Grid, Typography } from '@mui/material';
-import { ArrowButton, DisplayCard, ProjectCard } from 'components';
+import { ProjectCard } from 'components';
 import { projects } from 'constants';
 
 const ProjectFooter = ({ project }) => {
@@ -12,7 +12,7 @@ const ProjectFooter = ({ project }) => {
                     project.title === title
                         ? null
                         :
-                        <Grid item xs={12} md={4} sx={{ px: 1 }}>
+                        <Grid key={i} item xs={12} md={4} sx={{ px: 1 }}>
                             <ProjectCard title={title} category={category} image={image} path={path} />
                             {/* <img width='100%' height='100%' alt={title} src={image} /> */}
                         </Grid>

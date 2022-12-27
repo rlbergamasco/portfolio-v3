@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Box, Typography, Fab, Grid } from '@mui/material';
+import { Box, Typography, Grid } from '@mui/material';
 import { TriangleBackground, ArrowButton, Footer, SocialButtons, NameAnimation, ProjectCard, OvalButton } from 'components';
 import { about, projects } from 'constants';
 
@@ -60,8 +60,8 @@ const About = () => {
             <TriangleBackground height={triangleHeight} width="100vw" flip />
             <Box ref={ref} sx={{ p: 5, ml: window.innerWidth < 800 ? 0 : `${window.innerWidth * .04}px`, maxWidth: '700px', zIndex: 10, position: 'absolute', top: aboutTop }}>
                 <Typography color="textSecondary" variant="h1">About Me</Typography>
-                {about.map(p => (
-                    <Typography color="textSecondary" sx={{ pt: 3 }}>{p}</Typography>
+                {about.map((p, i) => (
+                    <Typography key={i} color="textSecondary" sx={{ pt: 3 }}>{p}</Typography>
                 ))}
                 <Box sx={{ mt: 4, mb: 1, display: 'flex', flexWrap: 'wrap' }}>
                     <OvalButton href='/resume.pdf' isDownload>Download Resume</OvalButton>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Typography, Box, Grid } from '@mui/material';
 import { Footer, ProjectFooter, OvalButton } from 'components';
 

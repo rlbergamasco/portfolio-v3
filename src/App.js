@@ -1,17 +1,13 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Box, createTheme, ThemeProvider } from '@mui/material';
-import { HomePage, GraphicsPage, ProjectPage } from 'pages';
+import { HomePage, ProjectPage } from 'pages';
 import { projects } from 'constants';
 
 const ROUTES = [
   {
     path: '/',
     element: <HomePage />,
-  },
-  {
-    path: '/graphics',
-    element: <GraphicsPage />,
   },
   {
     path: '/goodreads',

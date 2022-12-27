@@ -1,7 +1,5 @@
 import React from 'react';
-import { Fab, Grid, Typography } from '@mui/material';
-import { ArrowButton, DisplayCard, ProjectCard } from 'components';
-import { projects } from 'constants';
+import { Fab } from '@mui/material';
 
 const OvalButton = ({ children, href, isDownload }) => {
     return (
