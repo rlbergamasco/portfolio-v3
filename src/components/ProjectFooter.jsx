@@ -5,7 +5,7 @@ import { projects } from 'constants';
 
 const ProjectFooter = ({ project }) => {
     return (
-        <Box sx={{ mt: 2, py: 3, backgroundColor: '#1C1C1C' }}>
+        <Box sx={{ py: 3, backgroundColor: '#1C1C1C' }}>
             <Typography variant='h2' color='textPrimary' align='center'>More Projects</Typography>
             <Grid container sx={{ px: 4, py: 2 }}>
                 {projects.map(({ title, category, image, path }, i) => (

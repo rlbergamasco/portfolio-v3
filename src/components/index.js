@@ -4,5 +4,6 @@ export { ProjectCard } from './ProjectCard';
 export { ProjectFooter } from './ProjectFooter';
 export { SocialButtons } from './SocialButtons';
 export { NameAnimation } from './NameAnimation';
+export { ToolCard } from './ToolCard';
 export { OvalButton } from './OvalButton';
 export { Footer } from './Footer';

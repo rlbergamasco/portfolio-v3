@@ -45,8 +45,33 @@ export const projects = [
         category: "Graphic Design",
         date: "Febuary 2020 - December 2021",
         description: "Logo design, magazine layout, poster design, illustration, and motion graphic projects.",
-        image: "/images/hummingbirds.png",
-        tools: ["illustrator", "photoshop", "indesign", "aftereffects", "premierepro"],
-        path: '/infographics'
+        image: "/images/infographic.png",
+        path: '/infographics',
+        graphics: [
+            {
+                title: "Hummingbirds",
+                date: 'November 2022',
+                description: "Logo design, magazine layout, poster design, illustration, and motion graphic projects.",
+                goal: 'goal',
+                image: "/images/hummingbird.png",
+                tools: ["illustrator", "procreate"],
+            },
+            {
+                title: "Snowboarding Equipment 101",
+                date: 'October 2022',
+                description: "Logo design, magazine layout, poster design, illustration, and motion graphic projects.",
+                goal: 'goal',
+                image: "/images/snowboard.png",
+                tools: ["illustrator", "procreate"],
+            },
+            {
+                title: "How to Train Your Dragon",
+                date: 'September 2022',
+                description: "Logo design, magazine layout, poster design, illustration, and motion graphic projects.",
+                goal: 'goal',
+                image: "/images/httyd.png",
+                tools: ["illustrator", "procreate", "photoshop", "fresco"],
+            }
+        ]
     },
 ];

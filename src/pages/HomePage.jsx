@@ -78,7 +78,7 @@ const FeaturedWork = () => {
             <Typography sx={{ p: 2, pt: 0 }} variant='h1' color='textPrimary' textAlign="center">Featured Work</Typography>
             <Grid container>
                 {projects.map(({ title, image, category, path }, i) => (
-                    <Grid item key={i} xs={6} sx={{ p: 2 }}>
+                    <Grid item key={i} xs={12} md={6} sx={{ p: 2 }}>
                         <ProjectCard title={title} category={category} image={image} path={path} />
                     </Grid>
                 ))}
