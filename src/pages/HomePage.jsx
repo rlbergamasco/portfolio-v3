@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Box, Typography, Grid } from '@mui/material';
 import { TriangleBackground, ArrowButton, Footer, SocialButtons, NameAnimation, ProjectCard, OvalButton } from 'components';
-import { about, projects } from 'constants';
+import { about, projects } from 'utils/constants';
 
 const HomePage = () => {
     // scroll position for return to top button
@@ -58,7 +58,7 @@ const About = () => {
             <TriangleBackground height={triangleHeight} width="100vw" />
             <Box sx={{ height: triangleSpace, width: '100vw', backgroundColor: '#F5F5F5' }} />
             <TriangleBackground height={triangleHeight} width="100vw" flip />
-            <Box ref={ref} sx={{ p: 5, ml: window.innerWidth < 800 ? 0 : `${window.innerWidth * .04}px`, maxWidth: '700px', zIndex: 10, position: 'absolute', top: aboutTop }}>
+            <Box id='about' ref={ref} sx={{ p: 5, ml: window.innerWidth < 800 ? 0 : `${window.innerWidth * .04}px`, maxWidth: '700px', zIndex: 10, position: 'absolute', top: aboutTop }}>
                 <Typography color="textSecondary" variant="h1">About Me</Typography>
                 {about.map((p, i) => (
                     <Typography key={i} color="textSecondary" sx={{ pt: 3 }}>{p}</Typography>
@@ -74,7 +74,7 @@ const About = () => {
 
 const FeaturedWork = () => {
     return (
-        <Box sx={window.innerWidth > 680 ? { maxWidth: '1300px', mx: 'auto', mt: -7, p: 3, pt: 0 } : { maxWidth: '1300px', mx: 'auto', mt: 4, p: 3, pt: 0 }}>
+        <Box id='work' sx={window.innerWidth > 680 ? { maxWidth: '1300px', mx: 'auto', mt: -7, p: 3, pt: 0 } : { maxWidth: '1300px', mx: 'auto', mt: 4, p: 3, pt: 0 }}>
             <Typography sx={{ p: 2, pt: 0 }} variant='h1' color='textPrimary' textAlign="center">Featured Work</Typography>
             <Grid container>
                 {projects.map(({ title, image, category, path }, i) => (

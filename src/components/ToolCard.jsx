@@ -14,7 +14,8 @@ const ToolCard = ({ tool }) => {
         aftereffects: "After Effects",
         premierepro: "Premiere Pro",
         procreate: "Procreate",
-        fresco: "Fresco"
+        fresco: "Fresco",
+        xd: "Adobe XD"
     };
 
     return (

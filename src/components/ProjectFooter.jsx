@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Grid, Typography } from '@mui/material';
 import { ProjectCard } from 'components';
-import { projects } from 'constants';
+import { projects } from 'utils/constants';
 
 const ProjectFooter = ({ project }) => {
     return (

@@ -1,31 +1,8 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Box, createTheme, ThemeProvider } from '@mui/material';
-import { HomePage, ProjectPage } from 'pages';
-import { projects } from 'constants';
 
-const ROUTES = [
-  {
-    path: '/',
-    element: <HomePage />,
-  },
-  {
-    path: '/goodreads',
-    element: <ProjectPage project={projects[0]} />,
-  },
-  {
-    path: '/energy',
-    element: <ProjectPage project={projects[1]} />,
-  },
-  {
-    path: '/xrslider',
-    element: <ProjectPage project={projects[2]} />,
-  },
-  {
-    path: '/infographics',
-    element: <ProjectPage project={projects[3]} />,
-  },
-];
+import { ROUTES } from 'utils/routes';
 
 function App() {
   const theme = createTheme({
@@ -100,7 +77,7 @@ function App() {
         fontSize: '1.2rem',
       },
       body1: {
-        fontSize: '1.2rem',
+        fontSize: '1.1rem',
       }
     }
   });
