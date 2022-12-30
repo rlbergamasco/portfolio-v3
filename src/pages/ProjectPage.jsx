@@ -86,20 +86,24 @@ Overview.defaultProps = {
 
 const Goodreads = () => {
     const panels = ['start', 'login', 'signup', 'book-details', 'home', 'discover', 'bookshelf', 'profile', 'notifications', 'friends', 'recommended', 'search'];
+    const headingStyle = {
+        pt: 6,
+        pb: 2
+    }
 
     return (
         <React.Fragment>
-            <Typography sx={{ pt: 5, pb: 2 }} color='textSecondary' variant="h2">Usability Test</Typography>
+            <Typography sx={headingStyle} color='textSecondary' variant="h2">Usability Test</Typography>
             <iframe style={{ aspectRatio: '15.1 / 9', width: '100%', height: '100%' }}
                 src="https://docs.google.com/presentation/d/e/2PACX-1vS1vFiPMTsu_U76GCC9x0bRRB62BrvkosExkC21_0cv126IjkvE0rSFM7MhWkqVyuuPpl5e0uIy8yYo/embed?start=false&loop=false&delayms=5000"
                 frameBorder={0} allowFullScreen={true} mozallowfullscreen="true" webkitallowfullscreen="true">
                 Your browser doesn't support iframes.
             </iframe>
-            <Typography sx={{ pt: 5, pb: 2 }} color='textSecondary' variant="h2">Audience Analysis</Typography>
-            <Typography sx={{ pt: 5, pb: 2 }} color='textSecondary' variant="h2">Personas</Typography>
-            <Typography sx={{ pt: 5, pb: 2 }} color='textSecondary' variant="h2">Content Structure</Typography>
+            <Typography sx={headingStyle} color='textSecondary' variant="h2">Audience Analysis</Typography>
+            <Typography sx={headingStyle} color='textSecondary' variant="h2">Personas</Typography>
+            <Typography sx={headingStyle} color='textSecondary' variant="h2">Content Structure</Typography>
             {/* CARD SORT CAN GO HERE TOO */}
-            <Typography sx={{ pt: 5, pb: 2 }} color='textSecondary' variant="h2">Wireframes</Typography>
+            <Typography sx={headingStyle} color='textSecondary' variant="h2">Wireframes</Typography>
             <Grid container spacing={3}>
                 {panels.map((img, i) => (
                     <Grid item key={i} xs={6} sm={3} md={2}>
@@ -107,9 +111,9 @@ const Goodreads = () => {
                     </Grid>
                 ))}
             </Grid>
-            <Typography sx={{ pt: 5, pb: 2 }} color='textSecondary' variant="h2">Style Guide</Typography>
+            <Typography sx={headingStyle} color='textSecondary' variant="h2">Style Guide</Typography>
             <img src='/images/goodreads/style-guide.png' alt='Goodreads style guide' style={{ width: '100%', height: 'auto', borderRadius: '0.8rem', boxShadow: '0 0 10px rgba(0, 0, 0, 0.25)' }} />
-            <Typography sx={{ pt: 5, pb: 2 }} color='textSecondary' variant="h2">Mockups</Typography>
+            <Typography sx={headingStyle} color='textSecondary' variant="h2">Mockups</Typography>
             <Grid container spacing={3}>
                 {panels.map((img, i) => (
                     <Grid item key={i} xs={12} sm={4} md={3}>
@@ -117,7 +121,7 @@ const Goodreads = () => {
                     </Grid>
                 ))}
             </Grid>
-            <Typography sx={{ pt: 5, pb: 2 }} color='textSecondary' variant="h2">Pitch</Typography>
+            <Typography sx={headingStyle} color='textSecondary' variant="h2">Pitch</Typography>
         </React.Fragment>
     )
 }

@@ -48,40 +48,66 @@ const About = () => {
         setAboutHeight(ref.current.clientHeight);
     }, []);
 
-    const triangleSpace = aboutHeight + 300 - (window.innerWidth * .74);
-    const triangleHeight = triangleSpace > 0 ? window.innerWidth * .37 : (aboutHeight + 400) / 2;
+    const triangleSpace = aboutHeight + 300 - (window.innerWidth * .30);
+    const triangleHeight = triangleSpace > 0 ? window.innerWidth * .15 : (aboutHeight + 400) / 2;
     const aboutBackgroundHeight = triangleSpace < 0 ? triangleHeight * 2 : triangleSpace + (triangleHeight * 2);
     const aboutTop = ((aboutBackgroundHeight - aboutHeight) / 2) + window.innerHeight;
 
     return (
-        <React.Fragment>
+        <Box id='about'>
             <TriangleBackground height={triangleHeight} width="100vw" />
             <Box sx={{ height: triangleSpace, width: '100vw', backgroundColor: '#F5F5F5' }} />
             <TriangleBackground height={triangleHeight} width="100vw" flip />
-            <Box id='about' ref={ref} sx={{ p: 5, ml: window.innerWidth < 800 ? 0 : `${window.innerWidth * .04}px`, maxWidth: '700px', zIndex: 10, position: 'absolute', top: aboutTop }}>
-                <Typography color="textSecondary" variant="h1">About Me</Typography>
-                {about.map((p, i) => (
-                    <Typography key={i} color="textSecondary" sx={{ pt: 3 }}>{p}</Typography>
-                ))}
-                <Box sx={{ mt: 4, mb: 1, display: 'flex', flexWrap: 'wrap' }}>
-                    <OvalButton href='/resume.pdf' isDownload>Download Resume</OvalButton>
-                    <SocialButtons />
+            <Box sx={{ maxWidth: '1300px', mx: 'auto' }}>
+                <Box ref={ref} sx={{ pl: 3, maxWidth: '800px', zIndex: 10, position: 'absolute', top: aboutTop }}>
+                    <Typography color="textSecondary" variant="h1">About Me</Typography>
+                    {about.map((p, i) => (
+                        <Typography key={i} color="textSecondary" sx={{ pt: 3 }}>{p}</Typography>
+                    ))}
+                    <Box sx={{ mt: 4, mb: 1, display: 'flex', flexWrap: 'wrap' }}>
+                        <OvalButton href='/resume.pdf' isDownload>Download Resume</OvalButton>
+                        <SocialButtons />
+                    </Box>
                 </Box>
             </Box>
-        </React.Fragment>
+        </Box>
     );
 };
 
 const FeaturedWork = () => {
     return (
-        <Box id='work' sx={window.innerWidth > 680 ? { maxWidth: '1300px', mx: 'auto', mt: -7, p: 3, pt: 0 } : { maxWidth: '1300px', mx: 'auto', mt: 4, p: 3, pt: 0 }}>
-            <Typography sx={{ p: 2, pt: 0 }} variant='h1' color='textPrimary' textAlign="center">Featured Work</Typography>
-            <Grid container>
+        <Box id='work'
+            sx={{ maxWidth: '1300px', mx: 'auto', mb: window.innerWidth >= 900 ? -5 : 0, mt: 2, p: 3, pt: 0 }}>
+            {/* <Grid container>
                 {projects.map(({ title, image, category, path }, i) => (
                     <Grid item key={i} xs={12} md={6} sx={{ p: 2 }}>
                         <ProjectCard title={title} category={category} image={image} path={path} />
                     </Grid>
                 ))}
+            </Grid> */}
+            <Grid container spacing={3}>
+                <Grid item xs={12} md={6}>
+                    <Grid container direction='column' spacing={3}>
+                        <Grid item sx={{ position: 'relative', height: '100%' }}>
+                            <Typography sx={window.innerWidth >= 900 ? { pt: 1, position: 'absolute', top: '50%', transform: 'translateY(-50%)' } : { pt: 6, pb: 2 }} variant='h1' color='textPrimary'>Featured Work</Typography>
+                            <img width='100%' height='100%' alt='spacer' src={'/images/spacer.png'} style={{ opacity: 0, display: window.innerWidth >= 900 ? 'block' : 'none' }} />
+                        </Grid>
+                        {projects.filter((_, i) => i < projects.length / 2 - 1).map(({ title, image, category, path }, i) => (
+                            <Grid item key={i}>
+                                <ProjectCard title={title} category={category} image={image} path={path} />
+                            </Grid>
+                        ))}
+                    </Grid>
+                </Grid>
+                <Grid item xs={12} md={6}>
+                    <Grid container direction='column' spacing={3}>
+                        {projects.filter((_, i) => i >= projects.length / 2 - 1).map(({ title, image, category, path }, i) => (
+                            <Grid item key={i}>
+                                <ProjectCard title={title} category={category} image={image} path={path} />
+                            </Grid>
+                        ))}
+                    </Grid>
+                </Grid>
             </Grid>
         </Box>
     );

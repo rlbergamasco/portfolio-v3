@@ -5,7 +5,7 @@ const ToolCard = ({ tool }) => {
     const toolNames = {
         jquery: "jQuery",
         bulma: "Bulma",
-        react: "ReactJS",
+        react: "React",
         mui: "Material UI",
         figma: "Figma",
         illustrator: "Illustrator",
@@ -15,15 +15,20 @@ const ToolCard = ({ tool }) => {
         premierepro: "Premiere Pro",
         procreate: "Procreate",
         fresco: "Fresco",
-        xd: "Adobe XD"
+        xd: "Adobe XD",
+        node: "Node.js",
+        javascript: "JavaScript",
+        typescript: "TypeScript",
+        html: "HTML",
+        css: "CSS"
     };
 
     return (
-        <Box sx={{ display: 'flex', alignItems: 'center' }} >
-            <Box sx={{ pr: 2, py: 1 }}>
-                <img style={{ objectFit: 'contain' }} alt={toolNames[tool]} width='58px' height='58px' src={`/logos/${tool}.png`} />
+        <Box sx={{ display: 'flex', alignItems: 'center', pt: 1, pb: 2 }} >
+            <Box sx={{ pr: 2 }}>
+                <img style={{ objectFit: 'contain' }} alt={toolNames[tool]} width='auto' height='58px' src={`/logos/${tool}.png`} />
             </Box>
-            <Typography sx={{ pr: 3 }} color='textSecondary'>{toolNames[tool]}</Typography>
+            <Typography sx={{ pr: 5 }} color='textSecondary'>{toolNames[tool]}</Typography>
         </Box>
     );
 };

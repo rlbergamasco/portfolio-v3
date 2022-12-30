@@ -11,13 +11,10 @@ const scrollToTop = () => {
     });
 };
 
-const scrollNext = () => {
-    window.scrollTo({
-        top: window.innerHeight * 1.15,
-        left: 0,
-        behavior: 'smooth'
-    });
-};
+function scrollNext() {
+    const about = document.getElementById("about");
+    about.scrollIntoView({ behavior: "smooth" });
+}
 
 const ArrowButton = ({ direction }) => {
     return (
