@@ -38,7 +38,7 @@ export const projects = [
         path: "/xrslider",
     },
     {
-        title: "Probably a game with an API",
+        title: "A game with an API",
         category: "Web Development",
         date: "December 2022",
         goal: "Create backend with node.js/express.js to do something and typescript for frontend. https://www.interviewbit.com/blog/node-js-projects/",

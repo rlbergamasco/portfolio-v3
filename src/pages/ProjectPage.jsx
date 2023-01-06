@@ -85,10 +85,16 @@ Overview.defaultProps = {
 };
 
 const Goodreads = () => {
+    const personaImgs = ['persona-1', 'empathy-1', 'persona-2', 'empathy-2'];
     const panels = ['start', 'login', 'signup', 'book-details', 'home', 'discover', 'bookshelf', 'profile', 'notifications', 'friends', 'recommended', 'search'];
     const headingStyle = {
         pt: 6,
         pb: 2
+    }
+    const imgStyle = {
+        width: '100%',
+        borderRadius: '0.8rem',
+        boxShadow: '0 0 10px rgba(0, 0, 0, 0.25)'
     }
 
     return (
@@ -101,13 +107,24 @@ const Goodreads = () => {
             </iframe>
             <Typography sx={headingStyle} color='textSecondary' variant="h2">Audience Analysis</Typography>
             <Typography sx={headingStyle} color='textSecondary' variant="h2">Personas</Typography>
+            <Grid container spacing={3}>
+                {personaImgs.map((img, i) => (
+                    <Grid key={i} item xs={12} md={6}>
+                        <img src={`/images/goodreads/${img}.png`} alt={img} style={imgStyle} />
+                    </Grid>
+                ))}
+            </Grid>
             <Typography sx={headingStyle} color='textSecondary' variant="h2">Content Structure</Typography>
-            {/* CARD SORT CAN GO HERE TOO */}
+            <Grid container spacing={3}>
+                <Grid item xs={12} md={6}>
+                    <img src={`/images/goodreads/content-structure.png`} alt='content structure chart' style={imgStyle} />
+                </Grid>
+            </Grid>
             <Typography sx={headingStyle} color='textSecondary' variant="h2">Wireframes</Typography>
             <Grid container spacing={3}>
                 {panels.map((img, i) => (
                     <Grid item key={i} xs={6} sm={3} md={2}>
-                        <img src={`/images/goodreads/wireframes/${img}.png`} alt={img} style={{ width: '100%', borderRadius: '0.8rem', boxShadow: '0 0 10px rgba(0, 0, 0, 0.25)' }} />
+                        <img src={`/images/goodreads/wireframes/${img}.png`} alt={img} style={imgStyle} />
                     </Grid>
                 ))}
             </Grid>
@@ -117,7 +134,7 @@ const Goodreads = () => {
             <Grid container spacing={3}>
                 {panels.map((img, i) => (
                     <Grid item key={i} xs={12} sm={4} md={3}>
-                        <img src={`/images/goodreads/mockups/${img}.png`} alt={img} style={{ width: '100%', borderRadius: '0.8rem', boxShadow: '0 0 10px rgba(0, 0, 0, 0.25)' }} />
+                        <img src={`/images/goodreads/mockups/${img}.png`} alt={img} style={imgStyle} />
                     </Grid>
                 ))}
             </Grid>
