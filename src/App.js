@@ -74,6 +74,17 @@ function App() {
           'sans-serif'
         ].join(','),
         fontWeight: 700,
+        fontSize: '1.5rem',
+      },
+      h5: {
+        fontFamily: [
+          'Montserrat',
+          'Roboto',
+          'Helvetica',
+          'Arial',
+          'sans-serif'
+        ].join(','),
+        fontWeight: 700,
         fontSize: '1.2rem',
       },
       body1: {

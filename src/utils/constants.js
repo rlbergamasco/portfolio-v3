@@ -1,6 +1,6 @@
 export const about = [
     "My name is Riley Bergamasco. I am a senior at the University of North Carolina at Chapel Hill double majoring in Computer Science and Journalism with a concentration in Interactive Media & Design. Most of my experience is in web development, UX design, and graphic design. My goal is to bridge the gap between design and coding to create unique, usable experiences.",
-    "Learn more about my experience and skills by downloading my resume, connecting with me on LinkedIn, or checking out my GitHub. Continue scrolling to see a selection of my past projects.",
+    "Learn more about my experience and skills by downloading my resume, connecting with me on LinkedIn, or checking out my GitHub. Continue scrolling to see a selection of my projects.",
     "I designed and developed this website and all of its content. I built this website using React, JavaScript, HTML, and CSS.",
 ];
 
@@ -38,14 +38,14 @@ export const projects = [
         path: "/xrslider",
     },
     {
-        title: "Rabbit Avenger",
-        category: "Web Development",
+        title: "Rabbit Avenger Game",
+        category: "Web/AR Development",
         date: "August 2022 - Present",
         goal: "The goal of this project is to create an augmented reality game for pediatric patients in UNC Children's Hopsital that physically motivates them to move, mentally establishes confidence, and creates a positive association with rehabilitation exercises.",
         description: "I am currently working on this project for UNC Blue Sky Innovations where I am collaborating with a UX/Graphic Designer and a Writer/Marketer. While I am mostly involved in the coding for this project, I have also contributed to designing the user experience and storyline. In this game, the player is a rabbit who gains superpowers and accidentally unleashes evil salamanders on the planet. The goal of the game is to find each salamander by finding physical image targets throughout the hospital and play mini-games to defeat them in order to ultimately save the world. This project is in an early demo stage and will be available here shortly.",
         image: "/images/rabbitavenger.png",
         tools: ["wall", "aframe", "react", "typescript", "redux", "html", "css"],
-        path: "/newproject",
+        path: "/rabbitavenger",
     },
     // Another project idea: "Create backend with node.js/express.js to do something and typescript for frontend. https://www.interviewbit.com/blog/node-js-projects/"
     {

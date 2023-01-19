@@ -3,7 +3,7 @@ import { Box, Typography } from '@mui/material';
 import PropTypes from 'prop-types';
 import '../styles.css'
 
-const ProjectCard = ({ title, category, image, path }) => {
+const ProjectCard = ({ title, category, image, path, smallText }) => {
     return (
         <a href={path}>
             <Box sx={{ position: 'relative', height: '100%' }} className='projectCard'>
@@ -23,8 +23,8 @@ const ProjectCard = ({ title, category, image, path }) => {
                         transform: 'translate(-50%, -50%)',
                         marginTop: '-0.5em'
                     }}>
-                        <Typography variant='h2' align='center' color='textPrimary'>{title}</Typography>
-                        <Typography variant='h4' align='center' color='textPrimary' sx={{ mt: 1 }}>{category}</Typography>
+                        <Typography variant={smallText ? 'h4' : 'h2'} align='center' color='textPrimary'>{title}</Typography>
+                        <Typography variant={smallText ? 'body1' : 'h5'} align='center' color='textPrimary' sx={{ mt: 1 }}>{category}</Typography>
                     </Box>
                 </Box>
             </Box>
@@ -38,4 +38,10 @@ ProjectCard.propTypes = {
     title: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
+    path: PropTypes.string.isRequired,
+    smallText: PropTypes.bool
 };
+
+ProjectCard.defaultProps = {
+    smallText: false
+}

@@ -1,14 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Typography, Box, Grid } from '@mui/material';
 import { Footer, ProjectFooter, OvalButton, ToolCard } from 'components';
 import '../styles.css'
 
 const ProjectPage = ({ project }) => {
+    const [navPosition, setNavPosition] = useState('0');
+
+    let prevScrollpos = window.pageYOffset;
+    window.onscroll = function () {
+        let currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            setNavPosition('0');
+        } else {
+            setNavPosition('-80px');
+        }
+        prevScrollpos = currentScrollPos;
+    }
+
     if (project) {
         return (
             <React.Fragment>
                 <Box sx={{ backgroundColor: '#f5f5f5', minHeight: '100vh', px: 4 }}>
-                    <Box sx={{ py: 3, maxWidth: '1260px', m: 'auto', position: 'sticky', top: 0 }}>
+                    <Box sx={{
+                        backgroundColor: '#f5f5f5',
+                        py: 3,
+                        maxWidth: '1260px',
+                        m: 'auto',
+                        position: 'sticky',
+                        top: navPosition,
+                        transition: 'top 0.4s',
+                        zIndex: 1000
+                    }}>
                         <Nav />
                     </Box>
                     <Box sx={{ maxWidth: '1060px', m: 'auto', pb: 3 }}>
@@ -34,8 +56,8 @@ const ProjectPage = ({ project }) => {
 
 const Nav = () => {
     return (
-        <Box sx={{ display: 'flex' }}>
-            <a href='/'><Typography variant='h4'>Riley Bergamasco</Typography></a>
+        <Box id='nav' sx={{ display: 'flex' }}>
+            <a href='/'><Typography variant='h5'>Riley Bergamasco</Typography></a>
             <Box sx={{ display: 'flex', flexGrow: 1 }} />
             {/* <a href='/'><Typography sx={{ pl: 4 }}>Home</Typography></a> */}
             <a href='/#about'><Typography sx={{ pl: 4 }}>About</Typography></a>

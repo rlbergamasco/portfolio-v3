@@ -13,7 +13,7 @@ const ProjectFooter = ({ project }) => {
                         ? null
                         :
                         <Grid key={i} item xs={6} md={3}>
-                            <ProjectCard title={title} category={category} image={image} path={path} />
+                            <ProjectCard title={title} category={category} image={image} path={path} smallText />
                             {/* <img width='100%' height='100%' alt={title} src={image} /> */}
                         </Grid>
                 ))}
