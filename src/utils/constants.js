@@ -38,15 +38,16 @@ export const projects = [
         path: "/xrslider",
     },
     {
-        title: "A game with an API",
+        title: "Rabbit Avenger",
         category: "Web Development",
-        date: "December 2022",
-        goal: "Create backend with node.js/express.js to do something and typescript for frontend. https://www.interviewbit.com/blog/node-js-projects/",
-        description: "description here",
-        image: "/images/placeholder1.png",
-        tools: ["node", "react", "typescript", "html", "css"],
+        date: "August 2022 - Present",
+        goal: "The goal of this project is to create an augmented reality game for pediatric patients in UNC Children's Hopsital that physically motivates them to move, mentally establishes confidence, and creates a positive association with rehabilitation exercises.",
+        description: "I am currently working on this project for UNC Blue Sky Innovations where I am collaborating with a UX/Graphic Designer and a Writer/Marketer. While I am mostly involved in the coding for this project, I have also contributed to designing the user experience and storyline. In this game, the player is a rabbit who gains superpowers and accidentally unleashes evil salamanders on the planet. The goal of the game is to find each salamander by finding physical image targets throughout the hospital and play mini-games to defeat them in order to ultimately save the world. This project is in an early demo stage and will be available here shortly.",
+        image: "/images/rabbitavenger.png",
+        tools: ["wall", "aframe", "react", "typescript", "redux", "html", "css"],
         path: "/newproject",
     },
+    // Another project idea: "Create backend with node.js/express.js to do something and typescript for frontend. https://www.interviewbit.com/blog/node-js-projects/"
     {
         title: "Energy Data Visualization",
         category: "Web Development",
@@ -77,7 +78,7 @@ export const projects = [
                 date: "October 2022",
                 goal: "The goal of this infographic is to quickly explain the different types of available snowboarding equipment to allow readers to make an informed decision about what equipment is right for them. The assignment was to create an alternative story form graphic that clearly explains in words and visuals how to do something or how something works.",
                 process:
-                    "Logo design, magazine layout, poster design, illustration, and motion graphic projects.",
+                    "As a snowboarder, I know there's a lot to think about when choosing equipment, so I wanted to simplify the process. I started by researching information and creating categories, and then I drew several sketches of layouts. I added the text into Illustrator and used the sketches as placeholders. I designed all the visual assets except for the background in Illustrator with the help of reference images. I used some textured brushes to create a snowy background in the Procreate iPad app, and then I imported it into Illustrator and completed finishing touches.",
                 image: "/images/snowboard.png",
                 tools: ["illustrator", "procreate"],
             },
@@ -86,7 +87,7 @@ export const projects = [
                 date: "September 2022",
                 goal: "The goal of this infographic is to give an overview of the How to Train Your Dragon franchise through a mix of written information and engaging visuals. The assignment was to create an infographic relating to sports or entertainment that is easy to understand, includes thorough content/research, and has professional aesthetic value.",
                 process:
-                    "Logo design, magazine layout, poster design, illustration, and motion graphic projects.",
+                    "I started by researching information and creating categories of information. I drew sketches to help narrow down the categories to include in the poster. I based this infographic poster on the character Hiccup's notebooks from the How to Train Your Dragon movies. I drew the main dragon illustration on my iPad in the Procreate app. I drew the secondary illustrations on my iPad in the Adobe Fresco app. I used Photoshop to create the burnt paper background and Illustrator the create the organic edges of the paper. I compiled all of the assets I created in Illustrator to create the final poster.",
                 image: "/images/httyd.png",
                 tools: ["illustrator", "procreate", "photoshop", "fresco"],
             },

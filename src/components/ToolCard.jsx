@@ -20,15 +20,18 @@ const ToolCard = ({ tool }) => {
         javascript: "JavaScript",
         typescript: "TypeScript",
         html: "HTML",
-        css: "CSS"
+        css: "CSS",
+        wall: "8th Wall",
+        redux: "Redux",
+        aframe: "A-Frame"
     };
 
     return (
         <Box sx={{ display: 'flex', alignItems: 'center', pt: 1, pb: 2 }} >
             <Box sx={{ pr: 2 }}>
-                <img style={{ objectFit: 'contain' }} alt={toolNames[tool]} width='auto' height='58px' src={`/logos/${tool}.png`} />
+                <img style={{ objectFit: 'contain' }} alt={toolNames[tool]} width='58px' height='58px' src={`/logos/${tool}.png`} />
             </Box>
-            <Typography sx={{ pr: 5 }} color='textSecondary'>{toolNames[tool]}</Typography>
+            <Typography sx={{ pr: 6 }} color='textSecondary'>{toolNames[tool]}</Typography>
         </Box>
     );
 };

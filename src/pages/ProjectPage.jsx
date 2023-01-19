@@ -105,7 +105,7 @@ const Goodreads = () => {
                 frameBorder={0} allowFullScreen={true} mozallowfullscreen="true" webkitallowfullscreen="true">
                 Your browser doesn't support iframes.
             </iframe>
-            <Typography sx={headingStyle} color='textSecondary' variant="h2">Audience Analysis</Typography>
+            {/* <Typography sx={headingStyle} color='textSecondary' variant="h2">Audience Analysis</Typography> */}
             <Typography sx={headingStyle} color='textSecondary' variant="h2">Personas</Typography>
             <Grid container spacing={3}>
                 {personaImgs.map((img, i) => (
@@ -138,7 +138,7 @@ const Goodreads = () => {
                     </Grid>
                 ))}
             </Grid>
-            <Typography sx={headingStyle} color='textSecondary' variant="h2">Pitch</Typography>
+            {/* <Typography sx={headingStyle} color='textSecondary' variant="h2">Pitch</Typography> */}
         </React.Fragment>
     )
 }
