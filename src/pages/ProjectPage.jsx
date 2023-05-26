@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Typography, Box, Grid } from '@mui/material';
 import { Footer, ProjectFooter, OvalButton, ToolCard } from 'components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrophy } from "@fortawesome/free-solid-svg-icons";
 import '../styles.css'
 
 const ProjectPage = ({ project }) => {
@@ -67,6 +69,20 @@ const Nav = () => {
 }
 
 const Overview = ({ project, includeTitle }) => {
+
+    const getColor = (award) => {
+        const gold = "#d4af37"
+        const silver = "#aaa9ad"
+        const bronze = "#967444"
+        if (award === '1') {
+            return gold
+        } else if (award === '2') {
+            return silver
+        } else {
+            return bronze
+        }
+    }
+
     return (
         <Box sx={{ pb: 4 }}>
             <img width='100%' height='100%' alt={project.title} src={project.image} />
@@ -92,6 +108,15 @@ const Overview = ({ project, includeTitle }) => {
                         {project.category === 'UX Design' ? 'View Full Prototype' : 'View Project'}
                     </OvalButton>
                 </Box>
+                : null
+            }
+            {project.awards
+                ? project.awards.map((award, i) => (
+                    <Box key={i} sx={{ display: 'flex', alignItems: 'center' }}>
+                        <FontAwesomeIcon icon={faTrophy} size='lg' color={getColor(award.charAt(0))} />
+                        <p style={{ margin: '0.5em 0 0.5em 0.5em' }}>{award} — 2023 Society for News Design International Student Competition</p>
+                    </Box>
+                ))
                 : null
             }
             {project.path === '/goodreads'

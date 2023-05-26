@@ -72,6 +72,8 @@ export const projects = [
                 process: "When choosing my topic, I wanted to do something related to nature to really play into the organic part of the assignment. I have always loved hummingbirds, especially their bright colors, and I liked the idea of illustrating hummingbirds and the flowers they like. I researched information to get an idea for what categories I could include in the graphic. Then I created multiple sketches of layouts to help me narrow down which information to include. I decided to design the infographic as a magazine spread that would be in a nature magazine because I wanted to push myself to try a layout different from a traditional poster. I chose a serif font for the typography to fit the traditional magazine look. I created the layout in Adobe Illustrator and used rough sketches as placeholders for the illustrations. I digitally painted all the visual elements except for the map on my iPad in the Procreate app with the help of reference images. Finally, I added the illustrations into Illustrator and completed finishing touches.",
                 image: "/images/hummingbird.png",
                 tools: ["illustrator", "procreate"],
+                // awards: ["2023 Society for News Design International Student Competition"],
+                awards: ["1st Place Art & Illustration", "1st Place Feature Page Design", "2nd Place Magazine Spread", "Honorable Mention Alternative Story Format"],
             },
             {
                 title: "Snowboarding Equipment 101",
@@ -81,6 +83,7 @@ export const projects = [
                     "As a snowboarder, I know there's a lot to think about when choosing equipment, so I wanted to simplify the process. I started by researching information and creating categories, and then I drew several sketches of layouts. I added the text into Illustrator and used the sketches as placeholders. I designed all the visual assets except for the background in Illustrator with the help of reference images. I used some textured brushes to create a snowy background in the Procreate iPad app, and then I imported it into Illustrator and completed finishing touches.",
                 image: "/images/snowboard.png",
                 tools: ["illustrator", "procreate"],
+                awards: ["2nd Place Sports Page Design"],
             },
             {
                 title: "How to Train Your Dragon",
@@ -90,6 +93,7 @@ export const projects = [
                     "I started by researching information and creating categories of information. I drew sketches to help narrow down the categories to include in the poster. I based this infographic poster on the character Hiccup's notebooks from the How to Train Your Dragon movies. I drew the main dragon illustration on my iPad in the Procreate app. I drew the secondary illustrations on my iPad in the Adobe Fresco app. I used Photoshop to create the burnt paper background and Illustrator the create the organic edges of the paper. I compiled all of the assets I created in Illustrator to create the final poster.",
                 image: "/images/httyd.png",
                 tools: ["illustrator", "procreate", "photoshop", "fresco"],
+                awards: ["Honorable Mention Alternative Story Format"],
             },
         ],
     },
